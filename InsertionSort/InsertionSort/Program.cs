@@ -11,6 +11,7 @@ namespace InsertionSort
         static void Main(string[] args)
         {
             Console.WriteLine("try");
+            Console.WriteLine("try again");
         }
     }
 }
