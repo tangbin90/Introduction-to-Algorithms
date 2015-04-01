@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iomanip>
 
+#define ARRAY_SIZE 50000
 
 using namespace std;
 
@@ -13,10 +14,16 @@ public:
 	void InsertSorting(void);
 	SortingAlgorithm() :start(), finish(){}
 
-	unsigned int Array[100000];
-	clock_t start, finish;
-	double runningtime;
+	unsigned int Array[ARRAY_SIZE];
+	
+	double runningtime(){
+		_runningtime = double(finish - start) / CLOCKS_PER_SEC;
+		return _runningtime;
+	}
+
 private:
 	void InitializeArray(void);
 	void DisplayArray(void);
+	double _runningtime;
+	clock_t start, finish;
 };

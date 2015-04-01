@@ -9,7 +9,7 @@ void SortingAlgorithm::InsertSorting(void)
 	for (int j = 1; j < sizeof(Array) / sizeof(Array[0]); j++)
 	{
 		int i = j - 1;
-		int key = Array[j];
+		unsigned int key = Array[j];
 		while (i >= 0 && Array[i] > key)
 		{
 			Array[i + 1] = Array[i];
@@ -18,7 +18,7 @@ void SortingAlgorithm::InsertSorting(void)
 		Array[i + 1] = key;
 	}
 	finish = clock();
-	cout << "InsertSorting using time: " << finish - start << endl;
+	cout << "InsertSorting using time: " << runningtime() << " seconds"<<endl;
 	DisplayArray();
 }
 void SortingAlgorithm::InitializeArray()
