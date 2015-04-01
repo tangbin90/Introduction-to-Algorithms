@@ -4,26 +4,24 @@
 #include <cstdlib>
 #include <iomanip>
 
-#define ARRAY_SIZE 50000
+#define ARRAY_SIZE 100000
 
 using namespace std;
 
 class SortingAlgorithm
 {
 public:
+	void DisplayArray(void);
+	void InitializeArray(void);
+	//page 14
 	void InsertSorting(void);
-	SortingAlgorithm() :start(), finish(){}
+	//page 17 
+	void MergeSort(int start, int end);
 
 	unsigned int Array[ARRAY_SIZE];
-	
-	double runningtime(){
-		_runningtime = double(finish - start) / CLOCKS_PER_SEC;
-		return _runningtime;
-	}
 
 private:
-	void InitializeArray(void);
-	void DisplayArray(void);
-	double _runningtime;
-	clock_t start, finish;
+	
+	void Merge(int start, int mid, int end);
+
 };
