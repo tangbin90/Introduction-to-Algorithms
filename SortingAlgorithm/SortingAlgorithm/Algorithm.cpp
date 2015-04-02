@@ -88,4 +88,98 @@ void SortingAlgorithm::Merge(int start, int mid, int end)
 	delete pright;
 }
 
+int SortingAlgorithm::SortedSearch(unsigned int key)
+{
+	int end = sizeof(Array) / sizeof(Array[0])-1;
+	int start = 0;
+	int mid = 0;
+	while (start < end)
+	{
+		mid = (start + end) / 2;
+		if (Array[mid] < key)
+		{
+			start = mid+1;
+		}
+		else if (Array[mid] > key)
+		{
+			end = mid-1;
+		}
+		else
+		{
+			return mid;
+		}
+	}
+	if (Array[start] == key)
+		return start;
+	return -1;
+
+}
+
+int SortingAlgorithm::RecursiveSearch(unsigned int key,int start, int end)
+{
+	if (start >= end)
+		return -1;
+	else
+	{
+		int mid = (start + end) / 2;
+		if (Array[mid] > key)
+		{
+			return RecursiveSearch(key, start, mid-1);
+		}
+		else if (Array[mid] < key)
+		{
+			return RecursiveSearch(key, mid+1, end);
+		}
+		else
+			return mid;
+	}
+}
+
+void SortingAlgorithm::AdvancedInsertSorting()
+{
+	InitializeArray();
+	for (int j = 1; j < sizeof(Array) / sizeof(Array[0]); j++)
+	{
+		int i = j - 1;
+		unsigned int key = Array[j];
+		int end = i;
+		int start = 0;
+		int mid = 0;
+		while (start <= end)
+		{
+		    mid = (start + end) / 2;
+			if (Array[mid] < key)
+				start = mid+1;
+			else if (Array[mid] > key)
+				end = mid-1;
+			else
+			{
+				for (int k = j; k > mid; k--)
+				{
+					Array[k] = Array[k-1];
+				}
+				break;
+			}
+		}
+		if (Array[mid] >= key)
+		{
+			for (int k = j; k > start; k--)
+			{
+				Array[k] = Array[k - 1];
+			}
+			Array[mid] = key;
+		}
+		else
+		{
+			for (int k = j; k > start + 1; k--)
+			{
+				Array[k] = Array[k - 1];
+			}
+			Array[mid+1] = key;
+		}
+		Array[i + 1] = key;
+	}
+	DisplayArray();
+}
+
 
