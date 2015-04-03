@@ -182,4 +182,48 @@ void SortingAlgorithm::AdvancedInsertSorting()
 	DisplayArray();
 }
 
+int SortingAlgorithm::SumEqualsValue(int sum,int* p)
+{
+	InitializeArray();
+	MergeSort(0, ARRAY_SIZE - 1);
+	
+	for (int j = 0; j < ARRAY_SIZE; j++)
+	{
+		int result=SortedSearchWithStartPosition(j + 1, ARRAY_SIZE-1,sum - Array[j]);
+		if(result < 0)
+			continue;
+		else
+		{
+			*p = j;
+			*(p + 1) = result;
+			return 0;
+		}
+			
+	}
+	return -1;
+}
+
+int SortingAlgorithm::SortedSearchWithStartPosition(int start, int end, unsigned int key)
+{
+	int mid = 0;
+	while (start < end)
+	{
+		mid = (start + end) / 2;
+		if (Array[mid] < key)
+		{
+			start = mid + 1;
+		}
+		else if (Array[mid] > key)
+		{
+			end = mid - 1;
+		}
+		else
+		{
+			return mid;
+		}
+	}
+	return -1;
+
+}
+
 

@@ -60,6 +60,19 @@ int _tmain(int argc, _TCHAR* argv[])
 	runningtime = double(finish - start) / CLOCKS_PER_SEC;
 	cout << "AdvancedInsertSorting using time: " << runningtime << " seconds" << endl;
 	
+	start = clock();
+	int sum = 234;
+	int result_array[2] = {0,0};
+	int result = SortClass.SumEqualsValue(sum, result_array);
+	finish = clock();
+	runningtime = double(finish - start) / CLOCKS_PER_SEC;
+	cout << "SumEqualsValue using time: " << runningtime << " seconds" << endl;
+	if (result < 0)
+		cout << "Can't find two elements in Array whose sum is " << sum << endl;
+	else
+		cout << SortClass.Array[result_array[0]] << " + " << SortClass.Array[result_array[1]] << " equals " << sum<<endl;
+
+
 	getchar();
 
 	return 0;
