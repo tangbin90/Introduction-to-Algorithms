@@ -1,8 +1,6 @@
-﻿生成启动时间为 2015/5/19 21:24:48。
+﻿生成启动时间为 2015/5/20 10:52:32。
      1>项目“D:\DevelopLearning\IntroductionToAlgrithms\4-1FindMaxSubarray\4-1FindMaxSubarray\4-1FindMaxSubarray.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\4-1FindMaxSubarray.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
          C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\4-1FindMaxSubarray.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "4-1FindMaxSubarray.cpp"
          4-1FindMaxSubarray.cpp
        Link:
@@ -13,4 +11,4 @@
 
 生成成功。
 
-已用时间 00:00:01.17
+已用时间 00:00:00.88
