@@ -16,7 +16,7 @@ struct array
 	int value;
 };
 struct array FindMaximunSubarray(int low, int high);
-int Array[12] = { -12, -7, -2, -4, -3,-5,13,10,1923,-100,-12,-3};
+int Array[12] = { 1, -1, -2, -1, -3,5,13,-10,1923,-100,12,3};
 int _tmain(int argc, _TCHAR* argv[])
 {	
 	struct array arrayresult;
@@ -28,7 +28,7 @@ struct array FindCrossingSubarray(int low, int mid, int high)
 	int left_sum = MIN_INT;
 	int sum = 0;
 	int max_left = 0;
-	for (int i = mid; i >= low; i--)
+	for (int i =low; i <= mid; i++)
 	{
 		sum = sum + Array[i];
 		if (sum > left_sum)
@@ -84,8 +84,8 @@ struct array FindMaximunSubarray(int low, int high)
 		}
 		else
 		{
-			if (result.value > result2.value)
-				return result;
+			if (result1.value > result2.value)
+				return result1;
 			else
 				return result2;
 		}
