@@ -16,11 +16,13 @@ struct array
 	int value;
 };
 struct array FindMaximunSubarray(int low, int high);
-int Array[12] = { -12, -7, -2, -4, -3,-5,13,10,1923,-100,-12,-3};
+struct array FindMaximunSubarrayLinear();
+int Array[12] = { -12, -7, -2, -4, -3,-5,13,10,1923,-100,12,-3};
 int _tmain(int argc, _TCHAR* argv[])
 {	
-	struct array arrayresult;
+	struct array arrayresult, arrayresultlinear;
 	arrayresult = FindMaximunSubarray(0, 11);
+	arrayresultlinear = FindMaximunSubarrayLinear();
 	return 0;
 }
 struct array FindCrossingSubarray(int low, int mid, int high)
@@ -89,7 +91,32 @@ struct array FindMaximunSubarray(int low, int high)
 			else
 				return result2;
 		}
-		
 	 }
 }
 
+struct array FindMaximunSubarrayLinear()
+{
+	int length = sizeof(Array) / sizeof(int);
+	int sum=0;
+	array result;
+	result.high = 0;
+	result.low = 0;
+	result.value = Array[0];
+	for (int i = 0; i < length; i++)
+	{
+		int sum = 0;
+		if (Array[i] <= 0)
+			continue;
+		for (int j = i; j >= 0; j--)
+		{
+			sum += Array[j];
+			if (sum > result.value)
+			{
+				result.value = sum;
+				result.high = i;
+				result.low = j;
+			}
+		}
+	}
+	return result;
+}
